@@ -1,0 +1,55 @@
+// C++ program to overload the binary operator +
+// This program adds two complex numbers
+//we can same overload -,*,/ and % operator as +
+
+#include <iostream>
+using namespace std;
+
+class Complex {
+   private:
+    float real;
+    float imag;
+
+   public:
+    // Constructor to initialize real and imag to 0
+    Complex() : real(0), imag(0) {}
+
+    void input() {
+        cout << "Enter value of real part: ";
+        cin >> real;
+         cout << "Enter value of imaginary part: ";
+        cin >> imag;
+    }
+
+    // Overload the + operator
+    Complex operator + (const Complex& obj) {
+        Complex temp;
+        temp.real = real + obj.real;
+        temp.imag = imag + obj.imag;
+        return temp;
+    }
+
+    void output() {
+        cout << "Complex number: " << real << "+" << imag << "i"<<endl;
+    }
+};
+
+int main() {
+    Complex complex1, complex2, result;
+
+    cout << "Enter first complex number:\n";
+    complex1.input();
+    complex1.output();
+
+    cout << "Enter second complex number:\n";
+    complex2.input();
+    complex2.output();
+
+   // complex1 calls the operator function
+   // complex2 is passed as an argument to the function
+   cout<<"Addition of both complex numbers : "<<endl;
+    result = complex1 + complex2;
+    result.output();
+
+    return 0;
+}
