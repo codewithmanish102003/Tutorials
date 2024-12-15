@@ -1,2 +1,2 @@
 # Tutorials
- C , CPP , Python And Java
+ C , CPP , Python And DSA
